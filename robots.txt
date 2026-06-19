@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://justinb-stymada.github.io/mapp-hth-com-cn-2/sitemap.xml
