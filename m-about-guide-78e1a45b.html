@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>leyu 知识库 · 简明指南与访问提醒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f7fa;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1c2b36;
+      line-height: 1.6;
+      padding: 1.5rem 1rem 3rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* 网格目录骨架 */
+    .directory-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 600px) {
+      .directory-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (min-width: 960px) {
+      .directory-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 6px 16px rgba(0, 40, 50, 0.04);
+      transition: box-shadow 0.2s, transform 0.15s;
+      border: 1px solid #d9e6ed;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 28px rgba(0, 70, 80, 0.07);
+      transform: translateY(-2px);
+    }
+
+    .card-highlight {
+      border-top: 4px solid #2b9c9c;
+      background: #fafffe;
+    }
+
+    .card-accent {
+      border-left: 4px solid #389e9e;
+    }
+
+    /* 标题系统 */
+    .hero-title {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0d3b44;
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: #3b6a76;
+      margin-bottom: 0.6rem;
+      font-weight: 400;
+    }
+
+    .section-label {
+      display: inline-block;
+      background: #d9f0f0;
+      color: #0f5e5e;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.8rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 1rem 0 0.6rem;
+      color: #0d3b44;
+      border-bottom: 1px solid #dbeaf0;
+      padding-bottom: 0.3rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #1c4f5a;
+      margin: 0.6rem 0 0.3rem;
+    }
+
+    /* 正文与列表 */
+    p {
+      margin-bottom: 0.9rem;
+      color: #264b57;
+    }
+
+    ul, ol {
+      padding-left: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.3rem;
+    }
+
+    a {
+      color: #1b7f7f;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    a:hover {
+      border-bottom-color: #1b7f7f;
+    }
+
+    .info-tag {
+      display: inline-flex;
+      align-items: center;
+      background: #e1f0f3;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      margin-right: 0.4rem;
+      color: #1d5b66;
+    }
+
+    .badge {
+      background: #c5e3e8;
+      color: #13505b;
+      border-radius: 30px;
+      padding: 0.15rem 0.7rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+
+    .separator {
+      margin: 1.5rem 0 0.8rem;
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, #c2dbe3, transparent);
+    }
+
+    .footnote {
+      font-size: 0.85rem;
+      color: #4a6e7a;
+      border-top: 1px solid #dae8ee;
+      padding-top: 1.2rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      align-items: baseline;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid #389e9e;
+      color: #1d6b6b;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      transition: all 0.15s;
+    }
+
+    .btn-outline:hover {
+      background: #389e9e;
+      color: #ffffff;
+      border-color: #389e9e;
+    }
+
+    /* 移动端微调 */
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.7rem;
+      }
+      .card {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- hero 区域 / 目录标题 -->
+  <div style="margin-bottom: 2rem;">
+    <div class="hero-title">leyu · 知识库入口</div>
+    <div class="hero-sub">简明指南 · 访问提醒 · 相关信息</div>
+    <p style="max-width: 720px; margin-top: 0.4rem;">
+      leyu 相关资源聚合页，面向需要快速了解背景、获取访问提示的用户。
+      以下内容按功能划分为四个卡片区域，方便索引与查阅。
+    </p>
+    <div class="flex-row" style="margin-top: 0.6rem;">
+      <span class="badge">目录索引</span>
+      <span class="badge">最新更新 · 2025</span>
+    </div>
+  </div>
+
+  <!-- 网格卡片布局：目录感 + 信息区 -->
+  <div class="directory-grid">
+
+    <!-- 卡片 1：入门说明 / 简明指南 -->
+    <div class="card card-highlight">
+      <span class="section-label">📘 简明指南</span>
+      <p style="font-weight: 500; font-size: 1.05rem;">从零认识 leyu：基础说明</p>
+      <p>leyu 指向一个独立的综合性信息站点，包含文档、说明与工具索引。
+      本页面作为辅助入口，整理以下要点：</p>
+      <ul>
+        <li><strong>定位</strong>：面向有查阅与了解需求的用户，非商业推广。</li>
+        <li><strong>内容结构</strong>：主站涵盖分类说明、常见主题与提示。</li>
+        <li><strong>访问方式</strong>：直接通过浏览器打开主站即可浏览。</li>
+      </ul>
+      <p style="margin-top: 0.8rem;">
+        👉 如有需要，可前往 <a href="https://m-about-leyu.com">leyu</a> 获取更完整的背景信息。
+      </p>
+    </div>
+
+    <!-- 卡片 2：访问提醒 / 注意事项 -->
+    <div class="card card-accent">
+      <span class="section-label">⚠️ 访问提醒</span>
+      <p style="font-weight: 500;">使用前建议了解的几点：</p>
+      <ol>
+        <li>建议在稳定网络环境下访问，部分功能依赖标准浏览器特性。</li>
+        <li>leyu 不收集用户个人隐私信息，请放心浏览。</li>
+        <li>页面内容均为公开信息，无需注册或登录。</li>
+        <li>如遇到显示异常，可尝试刷新或更换浏览器。</li>
+      </ol>
+      <div style="background: #eaf5f7; border-radius: 12px; padding: 0.5rem 0.8rem; margin-top: 0.6rem;">
+        <span style="font-size:0.9rem;">💡 提示：</span> 所有链接均指向主站，请留意地址栏域名。
+      </div>
+    </div>
+
+    <!-- 卡片 3：相关信息 / 补充说明 -->
+    <div class="card">
+      <span class="section-label">📎 相关信息</span>
+      <p style="margin-top: 0.2rem;">除了直接访问主站，以下补充信息可能对你有帮助：</p>
+      <ul style="margin-bottom: 0.6rem;">
+        <li><strong>类别</strong>：综合信息 / 工具说明</li>
+        <li><strong>适用</strong>：普通用户、查阅者、研究参考</li>
+        <li><strong>维护</strong>：内容保持更新，但无固定发布周期</li>
+      </ul>
+      <p>如果你希望快速定位到核心内容，建议从主站的导航区块开始。</p>
+      <div style="margin-top: 0.8rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <span class="info-tag">🔍 关键词：leyu</span>
+        <span class="info-tag">📂 指南</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 额外的 FAQ 摘要 + 提示区（横向通栏卡片） -->
+  <div style="margin-top: 1.8rem; display: grid; grid-template-columns: 1fr; gap: 1.2rem;">
+    <div class="card" style="border-left: 4px solid #6bb5b5;">
+      <span class="section-label">❓ 常见疑问摘要</span>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem;">
+        <div>
+          <p style="font-weight: 500; margin-bottom: 0.2rem;">leyu 是否需要注册？</p>
+          <p style="font-size: 0.9rem;">不需要。主站为开放式阅读，无需注册或登录。</p>
+        </div>
+        <div>
+          <p style="font-weight: 500; margin-bottom: 0.2rem;">内容更新频率？</p>
+          <p style="font-size: 0.9rem;">不定期优化与补充，建议以实际访问时内容为准。</p>
+        </div>
+        <div>
+          <p style="font-weight: 500; margin-bottom: 0.2rem;">移动端兼容吗？</p>
+          <p style="font-size: 0.9rem;">主站适配移动设备，本入口页同样经过响应式设计。</p>
+        </div>
+        <div>
+          <p style="font-weight: 500; margin-bottom: 0.2rem;">有其他相关站点吗？</p>
+          <p style="font-size: 0.9rem;">目前仅此主站。所有告知均以 <a href="https://m-about-leyu.com">leyu</a> 为准。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部相关信息区 / 辅助说明 -->
+  <div class="footnote">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.6rem;">
+      <span>leyu · 知识库入口页 | 内容仅供参考</span>
+      <span style="font-size: 0.8rem; color: #5c7d89;">建议通过标准浏览器访问主站</span>
+    </div>
+    <div style="margin-top: 0.5rem; border-top: 1px solid #d2e3ea; padding-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1rem;">
+      <span>🔗 直接链接：<a href="https://m-about-leyu.com">leyu</a></span>
+      <span>📋 页面版本：2025.03</span>
+      <span>⚙️ 无跟踪 · 无广告</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
