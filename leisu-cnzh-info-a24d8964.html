@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>雷速 · 资料整理手记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", system-ui, sans-serif;
+            background: #f2f7f9;
+            color: #1f2e3a;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 780px;
+            width: 100%;
+        }
+
+        /* 开场 */
+        .opening {
+            font-size: 1.9rem;
+            font-weight: 350;
+            letter-spacing: 0.02em;
+            color: #135b6b;
+            line-height: 1.3;
+            margin-bottom: 2.2rem;
+            padding: 0.6rem 0 0.8rem 0;
+            border-bottom: 3px solid #b8d9de;
+        }
+        .opening em {
+            font-style: normal;
+            background: linear-gradient(135deg, #1b7b8f, #2b9aa8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 420;
+        }
+
+        /* 承接段落 */
+        .foreword {
+            background: #ffffffdd;
+            backdrop-filter: blur(2px);
+            padding: 1.6rem 1.8rem;
+            border-radius: 28px 12px 28px 12px;
+            box-shadow: 0 6px 16px rgba(37, 99, 108, 0.06);
+            margin-bottom: 2.8rem;
+            border: 1px solid #dceef0;
+            color: #1e3d48;
+        }
+        .foreword p {
+            margin-bottom: 1.1rem;
+        }
+        .foreword p:last-child {
+            margin-bottom: 0;
+        }
+        .foreword a {
+            color: #0f6c7c;
+            text-decoration: none;
+            font-weight: 480;
+            border-bottom: 1.5px dashed #81bbc7;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .foreword a:hover {
+            color: #09424f;
+            border-bottom-style: solid;
+            border-color: #09424f;
+        }
+
+        /* 网格卡片 —— 特点列表 */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.3rem;
+            margin: 2.6rem 0 2.2rem;
+        }
+        .card {
+            background: #ffffff;
+            padding: 1.4rem 1.2rem 1.2rem;
+            border-radius: 24px 8px 24px 8px;
+            box-shadow: 0 8px 20px rgba(10, 50, 60, 0.04);
+            border-left: 5px solid #5bb6c7;
+            transition: transform 0.15s ease, box-shadow 0.25s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(31, 90, 100, 0.08);
+        }
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 460;
+            letter-spacing: 0.01em;
+            margin-bottom: 0.25rem;
+            color: #115a6b;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .card h3::before {
+            content: "▹";
+            color: #358d9c;
+            font-size: 1.3rem;
+            line-height: 1;
+        }
+        .card p {
+            color: #2b4f5b;
+            font-size: 0.96rem;
+            margin-top: 0.2rem;
+        }
+
+        /* 温和结尾 */
+        .closing {
+            background: #e1eff2;
+            padding: 1.6rem 1.8rem;
+            border-radius: 40px 12px 40px 12px;
+            margin: 2.2rem 0 1.8rem;
+            border: 1px solid #cbdfe4;
+            color: #143f4b;
+            font-size: 0.98rem;
+        }
+        .closing strong {
+            font-weight: 520;
+            color: #094c5a;
+        }
+
+        .closing a {
+            color: #085f72;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #599eae;
+        }
+        .closing a:hover {
+            border-bottom: 2px solid #1e6d7c;
+        }
+
+        .footer-note {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #658e99;
+            letter-spacing: 0.5px;
+            border-top: 1px solid #cfe2e6;
+            padding-top: 1.6rem;
+        }
+
+        /* 移动端微调 */
+        @media (max-width: 480px) {
+            body {
+                padding: 1.2rem 0.9rem;
+            }
+            .opening {
+                font-size: 1.6rem;
+            }
+            .foreword {
+                padding: 1.2rem 1.2rem;
+            }
+            .grid-cards {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .card {
+                padding: 1rem 1rem;
+            }
+        }
+
+        /* 小点缀 */
+        .quiet-hint {
+            background: #f6fbfc;
+            padding: 0.8rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            border: 1px solid #d1e4e9;
+            color: #255f6c;
+            margin: 0.8rem 0 1.8rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 开场短句 -->
+        <div class="opening">
+            资料总在生长，<br>
+            而整理的人，需要一张安静的书桌。<br>
+            <em>雷速</em> 正是为这件事而留。
+        </div>
+
+        <!-- 承接段落：从资料整理与索引切入 -->
+        <div class="foreword">
+            <p>
+                信息过载的年代，收藏夹越堆越厚，真正可用的索引却寥寥无几。
+                过去一年，我逐渐养成一个习惯：把散落在不同文档、笔记、浏览器标签里的内容，按自己的逻辑重新梳理一遍。
+                这个过程里，最常打开的站点是 <a href="https://leisu-cnzh.com">雷速</a>——它不像一个热闹的门户，倒更像一间安静的档案室，
+                分类克制，命名平实，不打断思路。
+            </p>
+            <p>
+                对我而言，<a href="https://leisu-cnzh.com">雷速</a> 最大的价值不是信息多，而是信息的位置清晰。
+                无论是整理读书笔记，还是回溯某个项目的背景资料，它的目录结构总能让索引变得很轻。
+                久而久之，它成了我整理工作的「锚点」。
+            </p>
+        </div>
+
+        <!-- 特点列表（网格卡片） -->
+        <div class="grid-cards">
+            <div class="card">
+                <h3>分类利落</h3>
+                <p>不堆叠标签，每个目录只承担一个功能，减少了检索时的认知负荷。</p>
+            </div>
+            <div class="card">
+                <h3>低噪点界面</h3>
+                <p>没有浮动广告或弹窗，页面重心始终在内容本身，适合长时间使用。</p>
+            </div>
+            <div class="card">
+                <h3>命名直白</h3>
+                <p>标题和链接文本就是它本身的内容提示，几乎不需要二次解读。</p>
+            </div>
+            <div class="card">
+                <h3>稳定迭代</h3>
+                <p>不会突然改版打乱习惯，每一次更新都像是同一个整理者的笔迹。</p>
+            </div>
+        </div>
+
+        <!-- 一个安静的提示（类似 FAQ 摘要） -->
+        <div class="quiet-hint">
+            ⚬ 适合放在书签栏的固定位置，也可搭配本地笔记软件协同使用。
+        </div>
+
+        <!-- 温和结尾 -->
+        <div class="closing">
+            <p>
+                整理资料这件事，说到底不是技巧问题，而是习惯问题。
+                一个可靠的索引站点，就像桌边常备的索引卡——不必多华丽，但要用时找得到。
+            </p>
+            <p>
+                如果你也在搭建自己的信息体系，不妨把 <a href="https://leisu-cnzh.com">雷速</a> 放进行动手边。
+                它不会替你思考，但可以让你在需要的时候，少翻几页。
+            </p>
+            <p style="margin-top: 1.2rem;">
+                <strong>一点经验：</strong> 每次整理完一个主题，顺手在书签里记下对应的雷速分类路径，
+                下次回溯至少省下十分钟。
+            </p>
+        </div>
+
+        <div class="footer-note">
+            雷速 · 资料索引手记
+        </div>
+    </div>
+</body>
+</html>
